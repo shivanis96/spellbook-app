@@ -5,6 +5,7 @@ const navBar = () => {
 
   const allSpells = h("button", {}, "Spell Seeker");
   const searchInput = h("input", {}, "Which Spell", searchButton);
+  const logoutButton = h("button", {onclick: logout()}, "Logout");
   const addSpell = h("button", {}, "+");
 
   return h(
@@ -13,8 +14,12 @@ const navBar = () => {
     allSpells,
     searchInput,
     searchButton,
+    logoutButton,
     addSpell
   );
 };
 
+const logout = () => {
+  window.localStorage.removeItem("no");
+};
 export default navBar; 
